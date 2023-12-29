@@ -8,18 +8,37 @@
     background-color: #f9f9f9;
 }
 
+#content {
+    text-align: center;
+}
+
 #grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 80vw;
+    margin: 0 auto;
 }
 
 .row {
     display: flex;
+    width: 100%;
     /* border: dashed blue; */
 }
 
 .square {
     border: solid black;
     padding: 20px;
+    width: calc((80vw - 15px) / 16);
+    height: calc((80vw - 15px) / 16);
+    box-sizing: border-box;
+}
+
+#btnGrid {
+    color: white;
+    background-color: purple;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px
 }

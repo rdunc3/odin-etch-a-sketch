@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('#grid');
+    const btnGrid = document.querySelector('#btnGrid');
 
     // Creating a 16x16 grid to place squares in
     for (let i = 0; i < 16; i++){
@@ -20,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // console.log("Over a Square");
             square.style.backgroundColor = 'black';
         });
+    });
+
+    btnGrid.addEventListener('click', function() {
+        window.prompt("Input new number of squares per side");
     });
 
 });
