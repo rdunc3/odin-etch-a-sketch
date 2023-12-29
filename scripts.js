@@ -12,4 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         grid.appendChild(row);
     }
+
+    const squares = document.querySelectorAll('.square');
+
+    squares.forEach(square => {
+        square.addEventListener('mouseover', function() {
+            // console.log("Over a Square");
+            square.style.backgroundColor = 'black';
+        });
+    });
+
 });
