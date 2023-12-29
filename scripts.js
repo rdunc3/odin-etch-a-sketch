@@ -3,28 +3,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnGrid = document.querySelector('#btnGrid');
 
     // Creating a 16x16 grid to place squares in
-    for (let i = 0; i < 16; i++){
-        const row = document.createElement('div');
-        row.classList.add('row');
-        for (let j = 0; j < 16; j++){
-            const square = document.createElement('span');
-            square.classList.add('square');
-            row.appendChild(square);
-        }
-        grid.appendChild(row);
-    }
+    createGrid(16);
 
     const squares = document.querySelectorAll('.square');
 
-    squares.forEach(square => {
-        square.addEventListener('mouseover', function() {
+    grid.addEventListener('mouseover', function(event) {
+        const target = event.target;
+        if (target.classList.contains('square')) {
             // console.log("Over a Square");
-            square.style.backgroundColor = 'black';
-        });
+            target.style.backgroundColor = 'black';
+        }
     });
 
     btnGrid.addEventListener('click', function() {
-        window.prompt("Input new number of squares per side");
+        let squaresPerSide = 0;
+        do{
+            squaresPerSide = parseInt(window.prompt("Input new number of squares per side (Max: 100)"));
+        }while(squaresPerSide <= 1 || squaresPerSide > 100);
+        grid.innerHTML = "";
+        createGrid(squaresPerSide);
     });
 
+    function createGrid(squaresPerSide){
+        for (let i = 0; i < squaresPerSide; i++){
+            const row = document.createElement('div');
+            row.classList.add('row');
+            for (let j = 0; j < squaresPerSide; j++){
+                const square = document.createElement('span');
+                square.classList.add('square');
+                row.appendChild(square);
+            }
+            grid.appendChild(row);
+        }
+    }
 });

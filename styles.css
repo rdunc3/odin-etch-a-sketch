@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 80vw;
+    height: 80vw;
     margin: 0 auto;
 }
 
@@ -27,18 +28,15 @@
 }
 
 .square {
+    flex: 1;
     border: solid black;
-    padding: 20px;
-    width: calc((80vw - 15px) / 16);
-    height: calc((80vw - 15px) / 16);
-    box-sizing: border-box;
 }
 
 #btnGrid {
     color: white;
     background-color: purple;
     cursor: pointer;
-    padding: 10px;
+    padding: 1em;
     border-radius: 10px;
-    margin: 10px
+    margin: 1em;
 }
