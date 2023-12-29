@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: dashed hotpink;
+    /* border: none; */
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    border: dashed blue;
+}
+
+.square {
+    border: dashed black;
+    padding: 20px;
+}
